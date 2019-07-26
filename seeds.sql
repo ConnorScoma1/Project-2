@@ -1,5 +1,5 @@
 -- Drops the events if it exists currently --
-DROP DATABASE IF EXISTS findEvent_db ;
+DROP DATABASE IF EXISTS findEvent_db;
 -- Creates the "eve" database --
 CREATE DATABASE findEvent_db;
 
