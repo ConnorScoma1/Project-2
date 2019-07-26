@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h2>ADD EVENT <SPAN> ADD EVENT </SPAN>ADD EVENT</h2>
+
+        <form>
+            <div class="form-group row">
+                <label for="formGroupExampleInput" class="col-sm-3 col-form-label col-form-label-sm">What is your e-mail?</label>
+                <input type="text" class="form-control col-sm-9" id="formGroupExampleInput" placeholder="Example input">
+            </div>
+            <div class="form-group row">
+                <label for="formGroupExampleInput" class="col-sm-3 col-form-label col-form-label-sm">What is your event
+                    name?</label>
+                <input type="text" class="form-control col-sm-9" id="formGroupExampleInput" placeholder="Example input">
+            </div>
+            <div class="form-group row">
+                <label for="formGroupExampleInput" class="col-sm-3 col-form-label col-form-label-sm">When is it?</label>
+                <input type="text" class="form-control col-sm-9" id="formGroupExampleInput" placeholder="Example input">
+            </div>
+            <div class="form-group row">
+                <label for="formGroupExampleInput" class="col-sm-3 col-form-label col-form-label-sm">Where is
+                    it?</label>
+                <input type="text" class="form-control col-sm-9" id="formGroupExampleInput" placeholder="Example input">
+            </div>
+            <div class="form-group row">
+                <label for="formGroupExampleInput" class="col-sm-3 col-form-label col-form-label-sm">What kidn of
+                    event?</label>
+                <input type="text" class="form-control col-sm-9" id="formGroupExampleInput" placeholder="Example input">
+            </div>
+            <div class="form-group row">
+                <label for="formGroupExampleInput" class="col-sm-3 col-form-label col-form-label-sm">What makes YOUR
+                    event so great?</label>
+                <input type="text" class="form-control col-sm-9" id="formGroupExampleInput" placeholder="Example input">
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+    </div>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+</body>
+
+</html>
