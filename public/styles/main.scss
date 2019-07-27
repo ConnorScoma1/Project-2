@@ -11,8 +11,55 @@ $medium:500;
 body{
     font-family: 'Montserrat', sans-serif;
    
-    height:100vh;
+    //height:100vh;
 
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    margin-top:190px;
+    color:$primary-color;
+    h1{
+        font-size:60px;
+        font-weight: $medium;
+    }
+    p{
+        font-size:25px;
+    }
+  button{
+      width:220px;
+      height:60px;
+      background-color: $primary-color;
+      color:#fff;
+      text-transform: uppercase;
+      margin-top:1em;
+  }
+
+}
+
+#find-events{
+    position:fixed;
+    top: -500px;
+    left: -750px;
+    transform: rotate(-33deg);
+    background-color:$secondary-color;
+    height: 800px;
+
+}
+
+
+#form{
+    position:fixed;
+    top:550px;
+    left:500px;
+    transform: rotate(-33deg);
+    background-color:$secondary-color;
+
+.form-body{
+    visibility:hidden;
 }
 
 h2{
@@ -21,4 +68,6 @@ h2{
     span{
         color: $primary-color;
     }
+}
+ 
 }
