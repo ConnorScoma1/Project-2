@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "Root",
-    "password": null,
-    "database": "example_db",
+    "username": "root",
+    "password": "Topper333",
+    "database": "findevent_db",
     "host": "localhost",
     "dialect": "mysql"
   },
@@ -18,4 +18,6 @@
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
+  
+  
 }
