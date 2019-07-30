@@ -4,6 +4,8 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+var moment = require('moment')
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -104,7 +106,7 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 var eventLocation = "Milwaukee, WI"
 
-var eventDate = "2013061000-2015062000"
+var eventDateUnix = "2013061000-2015062000"
 
 function eventfulAPI() {
   var oArgs = {
@@ -114,7 +116,7 @@ function eventfulAPI() {
 
     where: eventLocation,
 
-    date: eventDate,
+    date: eventDateUnix,
 
     page_size: 5,
 
