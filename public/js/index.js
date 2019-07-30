@@ -4,7 +4,6 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
-var moment = require("moment");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -129,6 +128,6 @@ $("#submitSearch").on("click", function(event) {
       console.log(oData);
     });
   }
-});
 
-eventfulAPI();
+  eventfulAPI();
+});
