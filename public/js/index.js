@@ -100,7 +100,7 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 // **************************************************'
 // Eventful API Call
-// **************************************************'
+// **************************************************
 
 function eventfulAPI() {
   var oArgs = {
@@ -108,13 +108,12 @@ function eventfulAPI() {
 
     id: "20218701",
 
-    where: "Milwaukee",
+    where: "Milwaukee, WI",
 
     date: "2013061000-2015062000",
 
     page_size: 5,
 
-    sort_order: "popularity"
   };
 
   EVDB.API.call("/events/get", oArgs, function(oData) {
