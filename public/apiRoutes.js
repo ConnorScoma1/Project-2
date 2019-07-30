@@ -1,4 +1,5 @@
 var Event = require("../models/event");
+var NodeGeocoder = require('node-geocoder');
 
 module.exports = function (app) {
   // Get all events
