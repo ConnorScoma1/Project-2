@@ -108,6 +108,8 @@ $("#submitSearch").on("click", function(event) {
 
   var eventLocation = "Milwaukee, WI";
 
+  var eventLocation = $('#location').val().trim()
+
   var eventDateUnix = "2013061000-2015062000";
 
   function eventfulAPI() {
