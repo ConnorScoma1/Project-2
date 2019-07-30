@@ -4,6 +4,7 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -97,3 +98,42 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+// **************************************************'
+// Eventful API Call
+// **************************************************
+
+$("#submitSearch").on("click", function(event) {
+  event.preventDefault();
+
+  var eventLocation = "Milwaukee, WI";
+
+  var eventLocation = $('#location').val().trim()
+
+  var eventDateUnix = "2013061000-2015062000";
+
+  function eventfulAPI() {
+    var oArgs = {
+      app_key: "HRC47wH49nGCncVv",
+
+      id: "20218701",
+
+      where: eventLocation,
+
+      date: eventDateUnix,
+
+      page_size: 5
+    };
+
+    EVDB.API.call("/events/search", oArgs, function(oData) {
+
+      if(oData.events == null) {
+        console.log('There Are No Events For this Location')
+      } else {
+        console.log(oData)
+      }
+    });
+  }
+
+  eventfulAPI();
+});
