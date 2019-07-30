@@ -1,0 +1,8 @@
+ 
+ 359cebc4827e47e385662e776290caf5:6359cebc4827e47e385662e776290caf59ea8ef6dbdc4b188bd525bccc498b17 
+
+ https://accounts.spotify.com/authorize?client_id=359cebc4827e47e385662e776290caf5&response_type=code&redirect_uri=https%3A%2F%2Fapi-university.com%2F%0A
+
+
+
+https://accounts.spotify.com/api/tokenapplication%2Fx-www-form-urlencoded?grant_type=client_credentials=MzU5Y2ViYzQ4MjdlNDdlMzg1NjYyZTc3NjI5MGNhZjU6NjM1OWNlYmM0ODI3ZTQ3ZTM4NTY2MmU3NzYyOTBjYWY1OWVhOGVmNmRiZGM0YjE4OGJkNTI1YmNjYzQ5OGIxNyA=

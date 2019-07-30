@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(bodyParser.text()); 
 
-
+ 
 
 var syncOptions = { force: false };
 
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-app.use(express.static("app/public"));
+app.use(express.static("public"));
 
 //routes
 require("./routes/apiRoutes")(app);
