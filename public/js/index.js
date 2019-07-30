@@ -126,8 +126,12 @@ $("#submitSearch").on("click", function(event) {
     };
 
     EVDB.API.call("/events/search", oArgs, function(oData) {
-      // Note: this relies on the custom toString() methods below
-      console.log(oData);
+
+      if(oData.events == null) {
+        console.log('There Are No Events For this Location')
+      } else {
+        console.log(oData);
+      }
     });
   }
 
