@@ -1,9 +1,9 @@
 -- Drops the events if it exists currently --
-DROP DATABASE IF EXISTS findEvent_db;
+DROP DATABASE IF EXISTS findevent_db;
 -- Creates the "eve" database --
-CREATE DATABASE findEvent_db;
+CREATE DATABASE findevent_db;
 
-USE findEvent_db;
+USE findevent_db;
 
 CREATE TABLE events (
   id INT NOT NULL AUTO_INCREMENT,

@@ -13,25 +13,26 @@ app.use(bodyParser.text());
 
 
 
-// var syncOptions = { force: false };
+var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-// if (process.env.NODE_ENV === "test") {
-//   syncOptions.force = true;
-// }
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
 
 app.use(express.static("app/public"));
 
 //routes
-require("./public/apiRoutes")(app);
-require("./public/htmlRoutes")(app);
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // Starting the server, syncing our models ------------------------------------/
 // db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
+// });
 
   
 module.exports = app;
