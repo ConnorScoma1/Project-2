@@ -130,7 +130,7 @@ $("#submitSearch").on("click", function(event) {
       if(oData.events == null) {
         console.log('There Are No Events For this Location')
       } else {
-        console.log(oData);
+        console.log(oData)
       }
     });
   }
