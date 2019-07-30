@@ -10,7 +10,11 @@ module.exports = function (app) {
   });
 }
 
+// *******************************************************
 // Changes XML to JSON
+// Use Function to Convert XML to JSON for 
+// Eventfull API Call.
+// *******************************************************
 function xmlToJson(xml) {
 	
 	// Create the return object
