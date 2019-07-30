@@ -102,21 +102,25 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 // Eventful API Call
 // **************************************************
 
+var eventLocation = "Milwaukee, WI"
+
+var eventDate = "2013061000-2015062000"
+
 function eventfulAPI() {
   var oArgs = {
     app_key: "HRC47wH49nGCncVv",
 
     id: "20218701",
 
-    where: "Milwaukee, WI",
+    where: eventLocation,
 
-    date: "2013061000-2015062000",
+    date: eventDate,
 
     page_size: 5,
 
   };
 
-  EVDB.API.call("/events/get", oArgs, function(oData) {
+  EVDB.API.call("/events/search", oArgs, function(oData) {
     // Note: this relies on the custom toString() methods below
     console.log(oData);
   });
