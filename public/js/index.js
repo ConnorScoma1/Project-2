@@ -4,7 +4,7 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
-var moment = require('moment')
+var moment = require("moment");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -104,28 +104,31 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 // Eventful API Call
 // **************************************************
 
-var eventLocation = "Milwaukee, WI"
+$("#submitSearch").on("click", function(event) {
+  event.preventDefault();
 
-var eventDateUnix = "2013061000-2015062000"
+  var eventLocation = "Milwaukee, WI";
 
-function eventfulAPI() {
-  var oArgs = {
-    app_key: "HRC47wH49nGCncVv",
+  var eventDateUnix = "2013061000-2015062000";
 
-    id: "20218701",
+  function eventfulAPI() {
+    var oArgs = {
+      app_key: "HRC47wH49nGCncVv",
 
-    where: eventLocation,
+      id: "20218701",
 
-    date: eventDateUnix,
+      where: eventLocation,
 
-    page_size: 5,
+      date: eventDateUnix,
 
-  };
+      page_size: 5
+    };
 
-  EVDB.API.call("/events/search", oArgs, function(oData) {
-    // Note: this relies on the custom toString() methods below
-    console.log(oData);
-  });
-}
+    EVDB.API.call("/events/search", oArgs, function(oData) {
+      // Note: this relies on the custom toString() methods below
+      console.log(oData);
+    });
+  }
+});
 
 eventfulAPI();
