@@ -97,3 +97,30 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+// **************************************************'
+// Eventful API Call
+// **************************************************'
+
+function eventfulAPI() {
+  var oArgs = {
+    app_key: "HRC47wH49nGCncVv",
+
+    id: "20218701",
+
+    where: "Milwaukee",
+
+    date: "2013061000-2015062000",
+
+    page_size: 5,
+
+    sort_order: "popularity"
+  };
+
+  EVDB.API.call("/events/get", oArgs, function(oData) {
+    // Note: this relies on the custom toString() methods below
+    console.log(oData);
+  });
+}
+
+eventfulAPI();

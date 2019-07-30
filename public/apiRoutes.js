@@ -1,5 +1,6 @@
 var Event = require("../models/event");
 var NodeGeocoder = require('node-geocoder');
+var Keys = require('../KEYS')
 
 module.exports = function (app) {
   // Get all events
@@ -9,6 +10,15 @@ module.exports = function (app) {
     });
   });
 }
+
+// var eventfulAPI = 'http://eventful.com/events?q=music';
+
+// $.ajax({
+//   get: eventfulAPI,
+//   method: 'GET'
+// }).then(function(xml) {
+//   console.log(xml)
+// })
 
 // *******************************************************
 // Changes XML to JSON
