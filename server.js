@@ -1,9 +1,16 @@
 require("dotenv").config();
 var express = require("express");
+
 // var exphbs = require("express-handlebars");
 var app = express();
 var PORT = process.env.PORT || 3000;
 var bodyParser = require("body-parser");
+var moment = require('moment');
+
+
+console.log(moment);
+
+
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,9 +30,9 @@ if (process.env.NODE_ENV === "test") {
 
 app.use(express.static("public"));
 
-//routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// //routes
+require("./routes/apiRoutes");
+require("./routes/htmlRoutes");
 
 // Starting the server, syncing our models ------------------------------------/
 // db.sequelize.sync(syncOptions).then(function () {
