@@ -31,8 +31,8 @@ if (process.env.NODE_ENV === "test") {
 app.use(express.static("public"));
 
 // //routes
-require("./routes/apiRoutes");
-require("./routes/htmlRoutes");
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // Starting the server, syncing our models ------------------------------------/
 // db.sequelize.sync(syncOptions).then(function () {

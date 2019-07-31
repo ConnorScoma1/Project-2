@@ -4,23 +4,23 @@ module.exports = function (app) {
 
   //load index
   app.get("/", function (req, res) {
-    res.sendFile("./index.html");
+    res.sendFile(path.join(__dirname +"/../public/index.html"));
   });
 
   app.get("/add", function (req, res) {
-    res.sendFile("./add.html");
+    res.sendFile(path.join(__dirname + "/../public/add.html"));
   });
 
   app.get("/find", function (req, res) {
-    res.sendFile("./find.html");
+    res.sendFile(path.join(__dirname + "/../public/find.html"));
   });
 
   app.get("/delete", function (req, res) {
-    res.sendFile("./delete.html");
+    res.sendFile(path.join(__dirname + "/../public/delete.html"));
   });
 
   app.get("/avoid", function (req, res) {
-    res.sendFile("./avoid.html");
+    res.sendFile(path.join(__dirname + "/../public/avoid.html.html"));
   });
 
 
