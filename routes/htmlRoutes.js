@@ -20,7 +20,7 @@ module.exports = function (app) {
   });
 
   app.get("/avoid", function (req, res) {
-    res.sendFile(path.join(__dirname + "/../public/avoid.html.html"));
+    res.sendFile(path.join(__dirname + "/../public/avoid.html"));
   });
 
 

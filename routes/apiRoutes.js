@@ -36,12 +36,21 @@ module.exports = function (app) {
 
   //post routes//
   //add book
-  app.post("/api/new", function (req, res) {
+  app.post("/api/add", function (req, res) {
     Event.create({
       name: req.body.eventName,
       location: req.body.location,
       eventType: req.body.eventType,
       date: req.body.eventDate
+    });
+  });
+
+  //delete book
+  app.post("api/delete", function (req, res) {
+    Event.destroy({
+      where: {
+        id: req.body.id
+      }
     });
   });
 }
