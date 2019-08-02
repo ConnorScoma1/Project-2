@@ -13,7 +13,7 @@ module.exports = function (app) {
     if (req.params.book) {
       db.Event.findAll({
         where: {
-          eventName: req.params.eventName
+          name: req.params.eventName
         }
       }).then(function (results) {
         res.json(results);
@@ -25,7 +25,7 @@ module.exports = function (app) {
   app.get("/api/:date", function (req, res) {
     db.Event.findAll({
       where: {
-        eventDate: req.params.eventDate
+        date: req.params.eventDate
       }
     }).then(function (results) {
       res.json(results);
@@ -39,10 +39,11 @@ module.exports = function (app) {
   app.post("/api/add", function (req, res) {
     console.log(req.body); 
     db.Event.create({
-      name: req.body.eventName,
+      name: req.body.name,
+      date: req.body.date,
       location: req.body.location,
       eventType: req.body.eventType,
-      date: req.body.eventDate
+    
     });
   });
 

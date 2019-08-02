@@ -3,10 +3,10 @@
     $("#submit").on("click", function (event) {
         event.preventDefault();
         var newEvent = {
-            eventName: $("#event-name").val().trim(),
-            eventDate: $("#event-date").val().trim(),
-            eventLocation: $("#event-location").val().trim(),
+            name: $("#event-name").val().trim(),
+            location: $("#event-location").val().trim(),
             eventType: $("#event-type").val().trim(),
+            date: $("#event-date").val().trim(),
             // eventDescription: $("#event-description").val().trim();
             //not currently set up but can be just need to add it to several places
 
@@ -17,9 +17,11 @@
         $.post("/api/add", newEvent, function(response){
           
         $("#event-name").val("");
-        $("#event-date").val("");
         $("#event-location").val("");
-        $("#event-type").val("");
+            $("#event-type").val("");
+            $("#event-date").val("");
+            
+            console.log(location); 
           });
     
 

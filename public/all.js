@@ -7,15 +7,15 @@ $.get("api/all", function (data) {
         allSelection.attr("id", "all-events-" + i);
         $("#all-section").append(allSelection);
 
-        $("all-events-) + i).append("<h2> + (i + 1)+ ". " + data[i].eventName + "<h2>")
+        $("all-events-) + i).append("<h2> + (i + 1)+ ". " + data[i].name + "<h2>")
     }
     
-    $("all-events-) + i).append("<h3> + (i + 1)+ ". " + data[i].eventName + "<h3>")
+    $("all-events-) + i).append("<h3> + (i + 1)+ ". " + data[i].name + "<h3>")
 }
     
-$("all-events-) + i).append("<42> + (i + 1)+ ". " + data[i].eventName + "<h4>")
+$("all-events-) + i).append("<42> + (i + 1)+ ". " + data[i].name + "<h4>")
 }
     
-$("all-events-) + i).append("<h5> + (i + 1)+ ". " + data[i].eventName + "<h5>")
+$("all-events-) + i).append("<h5> + (i + 1)+ ". " + data[i].name + "<h5>")
 }
 })

@@ -7,14 +7,14 @@ USE findevent_db;
 
 CREATE TABLE events (
   id INT NOT NULL AUTO_INCREMENT,
-  eventName VARCHAR (45) NOT NULL,
+  name VARCHAR (45) NOT NULL,
+  date DATETIME NOT NULL,
   location VARCHAR (45) NOT NULL,
-  eventDate DATETIME NOT NULL,
-  startTime TIME (0) NOT NULL,
+  eventType VARCHAR (45) NOT NULL, 
   PRIMARY KEY (id)
 );
 
-INSERT INTO events (eventName, location, eventDate, startTime)
-VALUES ("Brewers vs Reds", "Milwakee, Wisconsin", "2019-07-27", "12:05:00");
+INSERT INTO events (name, location, date, eventType)
+VALUES ("Brewers vs Reds", "Milwakee, Wisconsin", "2019-07-27", "sporting event");
 
 select * from events; 
