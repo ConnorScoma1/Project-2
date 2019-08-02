@@ -121,7 +121,7 @@ $("#submitSearch").on("click", function(event) {
 
       where: eventLocation,
 
-      page_size: 10
+      page_size: 100
     };
 
     EVDB.API.call("/events/search", oArgs, function(oData) {
@@ -131,11 +131,7 @@ $("#submitSearch").on("click", function(event) {
         for (var i = 0; i < oData.events.event.length; i++) {
           var events = oData.events.event;
           console.log(events[i]);
-          console.log(events[i].latitude);
         }
-
-        console.log(oData.events.event[0].latitude);
-        console.log(oData.events.event[0].longitude);
 
         function initMap() {
           // Setting Up Map after client search request
@@ -149,20 +145,12 @@ $("#submitSearch").on("click", function(event) {
             zoom: 10,
             center: location
           });
-          // setting markers for vender locations
-          // var marker = new google.maps.Marker({
-          //   position: location,
-          //   draggable: false,
-          //   animation: google.maps.Animation.DROP,
-          //   map: map,
-          //   title: "Hello World!"
-          // });
-          for (var j = 0; oData.events.event.length; j++) {
+  
+          for (var j = 0; j < oData.events.event.length; j++) {
         
-            var latitudeLoop = parseFloat(oData.events.event[i].latitude)
-            var longitudeLoop = parseFloat(oData.events.event[i].longitude);
+            var latitudeLoop = parseFloat(oData.events.event[j].latitude)
+            var longitudeLoop = parseFloat(oData.events.event[j].longitude);
 
-              console.log("Latitude" + latitude)
             var locationLoop = { lat: latitudeLoop, lng: longitudeLoop };
             // setting markers for vender locations
             var marker = new google.maps.Marker({
@@ -170,7 +158,7 @@ $("#submitSearch").on("click", function(event) {
               draggable: false,
               animation: google.maps.Animation.DROP,
               map: map,
-              title: oData.events.event[i].description
+              // title: oData.events.event[i].description
             });
           }
           marker.addListener("click", toggleBounce);
