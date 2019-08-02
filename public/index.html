@@ -15,17 +15,37 @@
       crossorigin="anonymous"
     />
 
+    <link rel="stylesheet" href="./css/main.css">
+
     <title>Find Yo Shit</title>
   </head>
   <body>
-    <div class="pageContent">
-      <h1>Find Yo Shit!</h1>
-        <div class="h3">WHATS APPPP</div>
-          <a class="btn btn-primary btn-lg" href="add.html"  id="add-event">ADD EVENT</button>
-            <br>
-          <a class="btn btn-primary btn-lg" href="find.html" id="search-events" >NEARBY EVENTS</button>
-      
+
+    <div id="bg"></div>
+
+    <div id="main-page" class=" align-middle text-center">
+      <div class="row">
+        <div class="col-12 text-center">
+        <h1>Find Yo SHit</h1>
+        <p>What's Apppppppp?</p>
+       </div>
+       <div class="row event-btns">
+         <div class="col-6 event-btn">
+             <a name="add" id="add-event" class="btn" href="/add" role="button">ADD EVENT</a>
+         </div>
+         <div class="col-6 event-btn">
+            
+        <a name="find" id="find-event" class="btn" href="/find" role="button">FIND EVENT</a>
+         </div>
+       </div>
+   
+      </div>
     </div>
+   
+
+
+
+
 
     <!-- Optional JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
