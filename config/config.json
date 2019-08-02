@@ -1,10 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "Topper333",
+    "password": "1212QWqw12",
     "database": "findevent_db",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port":3306
   },
   "test": {
     "username": "n3bu7ojn13nah69s",
