@@ -145,23 +145,54 @@ $("#submitSearch").on("click", function(event) {
             zoom: 10,
             center: location
           });
-  
+
           for (var j = 0; j < oData.events.event.length; j++) {
-        
-            var latitudeLoop = parseFloat(oData.events.event[j].latitude)
+            // Lat & Lng For Pins Locations
+            var latitudeLoop = parseFloat(oData.events.event[j].latitude);
             var longitudeLoop = parseFloat(oData.events.event[j].longitude);
 
             var locationLoop = { lat: latitudeLoop, lng: longitudeLoop };
+
+            // Pin Information Windows
+            var contentString =
+              '<div id="content">' +
+              '<div id="siteNotice">' +
+              "</div>" +
+              '<h1 id="firstHeading" class="firstHeading">' +
+              oData.events.event[j].title +
+              "</h1>" +
+              '<div id="bodyContent">' +
+              "<p><b>" +
+              oData.events.event[j].city_name +
+              "</b> <br />" +
+              oData.events.event[j].description +
+              "</p>" +
+              "<p><b>Address: </b>" +
+              oData.events.event[j].venue_address +
+              "</p>";
+            ("</div>");
+
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString,
+              maxWidth: 200
+            });
+
             // setting markers for vender locations
             var marker = new google.maps.Marker({
               position: locationLoop,
               draggable: false,
               animation: google.maps.Animation.DROP,
               map: map,
-              // title: oData.events.event[i].description
+              title: oData.events.event[j].description
             });
           }
+
           marker.addListener("click", toggleBounce);
+
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+
         }
         function toggleBounce() {
           if (marker.getAnimation() !== null) {
