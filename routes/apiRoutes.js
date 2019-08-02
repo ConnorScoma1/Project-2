@@ -1,9 +1,9 @@
-var Event = require("../models/event");
+var db = require("../models"); 
 
 module.exports = function (app) {
   // Get all events
   app.get("/api/all", function (req, res) {
-    Event.findAll({}).then(function (results) {
+    db.Event.findAll({}).then(function (results) {
       res.json(results);
     });
   });
@@ -11,7 +11,7 @@ module.exports = function (app) {
   //find specific event by name
   app.get("/api/:eventName", function (req, res) {
     if (req.params.book) {
-      Event.findAll({
+      db.Event.findAll({
         where: {
           eventName: req.params.eventName
         }
@@ -23,7 +23,7 @@ module.exports = function (app) {
 
   //find specific event by date
   app.get("/api/:date", function (req, res) {
-    Event.findAll({
+    db.Event.findAll({
       where: {
         eventDate: req.params.eventDate
       }
@@ -37,7 +37,8 @@ module.exports = function (app) {
   //post routes//
   //add book
   app.post("/api/add", function (req, res) {
-    Event.create({
+    console.log(req.body); 
+    db.Event.create({
       name: req.body.eventName,
       location: req.body.location,
       eventType: req.body.eventType,
@@ -47,7 +48,7 @@ module.exports = function (app) {
 
   //delete book
   app.post("api/delete", function (req, res) {
-    Event.destroy({
+    db.Event.destroy({
       where: {
         id: req.body.id
       }

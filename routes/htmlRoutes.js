@@ -4,7 +4,7 @@ module.exports = function (app) {
 
   //load index
   app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname +"/../public/index.html"));
+    res.sendFile(path.join(__dirname + "/../public/index.html"));
   });
 
   app.get("/add", function (req, res) {
@@ -39,7 +39,7 @@ module.exports = function (app) {
   //   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
-    res.render("404");
-  });
+  //   app.get("*", function (req, res) {
+  //     res.render("404");
+  //   });
 }
