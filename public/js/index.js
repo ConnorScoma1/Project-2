@@ -124,26 +124,26 @@ $("#submitSearch").on("click", function(event) {
         console.log("There Are No Events For this Location");
       } else {
 
-        var newEvent = {
-          name: $('#event-name').val().trim(),
-          when: $('#event-date').val().trim(),
-          where: $('#event-location').val().trim(),
-          type: $('#event-type').val().trim()
-        }
+        // var newEvent = {
+        //   name: $('#event-name').val().trim(),
+        //   when: $('#event-date').val().trim(),
+        //   where: $('#event-location').val().trim(),
+        //   type: $('#event-type').val().trim()
+        // }
 
-        $.post("/api/all", newEvent)
-          .then(function(res) {
-            console.log(res)
-          })
+        // $.post("/api/all", newEvent)
+        //   .then(function(res) {
+        //     console.log(res)
+        //   })
 
-        $('#nearby-events').hide();
-        $('#show-events').show();
+        // $('#nearby-events').hide();
+        // $('#show-events').show();
        
 
         for (var i = 0; i < 5; i++) {
           var events = oData.events.event;
           
-          makeEventBar();
+          // makeEventBar();
         }
 
         function initMap() {
