@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap");
+body,
+html {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  color: #4D38F7;
+  font-family: 'Lato', sans-serif;
+}
+
+#bg {
+  -webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+          clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+  background-color: #222;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#bg2 {
+  -webkit-clip-path: polygon(100% 17%, 0% 100%, 100% 100%);
+          clip-path: polygon(100% 17%, 0% 100%, 100% 100%);
+  background-color: #222;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#bg3 {
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+          clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  background-color: #222;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#add-event {
+  margin: auto;
+}
+
+#add-event h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+#add-event h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+#add-event .form-control-lg {
+  background-color: #c3c3c3;
+  border: none;
+  border-radius: 0;
+}
+
+#add-event span {
+  color: #222;
+}
+
+#add-event .form-group {
+  margin: 2.5rem 2rem;
+}
+
+#add-event .col-form-label-lg {
+  font-weight: 700;
+  text-align: left;
+}
+
+#add-event .btn-primary {
+  float: right;
+  border-radius: 0;
+  background-color: #4D38F7;
+  text-transform: uppercase;
+  padding: .5rem 3rem;
+  margin-right: -2rem;
+  border: none;
+}
+
+#nearby-events {
+  width: 100%;
+  height: 100%;
+  margin-top: 15%;
+  letter-spacing: 1px;
+}
+
+#nearby-events h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  font-size: 5rem;
+  letter-spacing: 3px;
+}
+
+#nearby-events .form-group {
+  padding: 1rem 15rem;
+  font-size: 2rem;
+  text-align: left;
+}
+
+#nearby-events .form-control {
+  background-color: #c3c3c3;
+  border: none;
+  border-radius: 0;
+}
+
+#nearby-events button {
+  float: right;
+  border-radius: 0;
+  background-color: #4D38F7;
+  text-transform: uppercase;
+  padding: .5rem 3rem;
+  margin-right: -2rem;
+  border: none;
+  float: none;
+}
+
+#main-page {
+  width: 100%;
+  height: 100%;
+  margin-top: 20%;
+}
+
+#main-page h1 {
+  text-transform: uppercase;
+  font-size: 6rem;
+}
+
+#main-page p {
+  font-size: 2rem;
+}
+
+#main-page .event-btns {
+  width: 100%;
+}
+
+#main-page .event-btns a {
+  text-transform: uppercase;
+  background: #4D38F7;
+  color: #fff;
+  font-size: 1.5rem;
+  width: 50%;
+  padding: 2rem 0;
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#main-page .event-btns .btn {
+  border-radius: 0;
+}
+
+.square1 {
+  position: absolute;
+  -webkit-transform: rotate(-33deg);
+  transform: rotate(-33deg);
+  right: 50%;
+  top: 50%;
+  bottom: 0;
+  margin-right: -1000px;
+  background-color: #222;
+  width: 2000px;
+  height: 800px;
+  z-index: -1;
+}
+
+#events {
+  visibility: hidden;
+  float: right;
+}
+
+#map {
+  background: #222;
+  height: 100vh;
+  visibility: hidden;
+}
+
+#map .googMap {
+  padding-top: 3em;
+  width: 70%;
+}
+
+#events {
+  width: 550px;
+}
+/*# sourceMappingURL=main.css.map */

@@ -4,7 +4,6 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
-
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -99,6 +98,7 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
+
 // **************************************************'
 // Eventful API Call
 // **************************************************
@@ -108,9 +108,9 @@ $("#submitSearch").on("click", function(event) {
 
   var eventLocation = "Milwaukee, WI";
 
-  var eventLocation = $('#location').val().trim()
-
-  var eventDateUnix = "2013061000-2015062000";
+  var eventLocation = $("#location")
+    .val()
+    .trim();
 
   function eventfulAPI() {
     var oArgs = {
@@ -120,17 +120,88 @@ $("#submitSearch").on("click", function(event) {
 
       where: eventLocation,
 
-      date: eventDateUnix,
-
-      page_size: 5
+      page_size: 100
     };
 
     EVDB.API.call("/events/search", oArgs, function(oData) {
-
-      if(oData.events == null) {
-        console.log('There Are No Events For this Location')
+      if (oData.events == null) {
+        console.log("There Are No Events For this Location");
       } else {
-        console.log(oData)
+        for (var i = 0; i < oData.events.event.length; i++) {
+          var events = oData.events.event;
+          console.log(events[i]);
+        }
+
+        function initMap() {
+          // Setting Up Map after client search request
+          var latitude = parseFloat(oData.events.event[0].latitude);
+          var longitude = parseFloat(oData.events.event[0].longitude);
+          // setting map location
+          var location = { lat: latitude, lng: longitude };
+
+          //init google map api
+          var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 10,
+            center: location
+          });
+
+          for (var j = 0; j < oData.events.event.length; j++) {
+            // Lat & Lng For Pins Locations
+            var latitudeLoop = parseFloat(oData.events.event[j].latitude);
+            var longitudeLoop = parseFloat(oData.events.event[j].longitude);
+
+            var locationLoop = { lat: latitudeLoop, lng: longitudeLoop };
+
+            // Pin Information Windows
+            var contentString =
+              '<div id="content">' +
+              '<div id="siteNotice">' +
+              "</div>" +
+              '<h1 id="firstHeading" class="firstHeading">' +
+              oData.events.event[j].title +
+              "</h1>" +
+              '<div id="bodyContent">' +
+              "<p><b>" +
+              oData.events.event[j].city_name +
+              "</b> <br />" +
+              oData.events.event[j].description +
+              "</p>" +
+              "<p><b>Address: </b>" +
+              oData.events.event[j].venue_address +
+              "</p>";
+            ("</div>");
+
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString,
+              maxWidth: 200
+            });
+
+            // setting markers for vender locations
+            var marker = new google.maps.Marker({
+              position: locationLoop,
+              draggable: false,
+              animation: google.maps.Animation.DROP,
+              map: map,
+              title: oData.events.event[j].description
+            });
+          }
+
+          marker.addListener("click", toggleBounce);
+
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+
+        }
+        function toggleBounce() {
+          if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+          } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+          }
+        }
+
+        initMap();
       }
     });
   }
