@@ -15,14 +15,11 @@
         console.log(newEvent)
     
         $.post("/api/add", newEvent, function(response){
-          
-        $("#event-name").val("");
-        $("#event-location").val("");
-            $("#event-type").val("");
-            $("#event-date").val("");
-            
             console.log(location); 
           });
-    
-
+          $("#event-name").val("");
+          $("#event-location").val("");
+              $("#event-type").val("");
+              $("#event-date").val("");
+          
     });
