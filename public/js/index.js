@@ -106,8 +106,6 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 $("#submitSearch").on("click", function(event) {
   event.preventDefault();
 
-  var eventLocation = "Milwaukee, WI";
-
   var eventLocation = $("#location").val().trim()
 
   function eventfulAPI() {
