@@ -6,13 +6,13 @@ $.get("/api/all", function (data) {
         addSection.attr("id", "add-event-" + i");
         $("addSection").append(addSection);
 
-        $("add-event0-"+ i ).append("<h2>+ i (append);
+        $("add-event0-"+ i ).append("<h2>"+ i (append)));
             
-        $("add-event0-"+ i ).append("<h3>Name+ i (append);
+        $("add-event0-"+ i ).append("<h3>Name" + i (append));
             
-        $("add-event0-"+ i ).append("<h3>location+ i (append);
+        $("add-event0-"+ i ).append("<h3>" + location+ i (append));
             
-        $"add-event0-"+ i ).prepend("<h2>+ date(append);
+        $("add-event0-"+ i ).append("<h2>"+ date + i + (append);
     }
  
 });
