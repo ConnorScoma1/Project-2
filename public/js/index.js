@@ -122,7 +122,7 @@ $("#submitSearch").on("click", function(event) {
     };
 
     EVDB.API.call("/events/search", oArgs, function(oData) {
-      if (oData.events === null) {
+      if (oData.events == null) {
         console.log("There Are No Events For this Location");
       } else {
 
@@ -133,18 +133,18 @@ $("#submitSearch").on("click", function(event) {
           type: $('#event-type').val().trim()
         }
 
-        $.post("/api", newEvent)
+        $.post("/api/all", newEvent)
           .then(function(res) {
             console.log(res)
           })
 
         $('#nearby-events').hide();
         $('#show-events').show();
-        $('#map').show();
+       
 
         for (var i = 0; i < 5; i++) {
           var events = oData.events.event;
-          console.log(events[i]);
+          
           makeEventBar();
         }
 
