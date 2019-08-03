@@ -28,14 +28,10 @@ $secondary_color: #222;
 body,
 html {
     height: 100%;
-
     box-sizing: border-box;
     overflow: hidden;
     color: $primary_color;
     font-family: 'Lato', sans-serif;
-
-
-
 }
 
 #bg {
@@ -65,81 +61,15 @@ html {
     z-index: -1;
 }
 
-#add-event {
-    margin: auto;
 
-    h1 {
-        @include h1-style();
-    }
 
-    h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-    }
 
-    .form-control-lg {
-        background-color: #c3c3c3;
-        border: none;
-        border-radius: 0;
-    }
-
-    span {
-        color: $secondary_color;
-    }
-
-    .form-group {
-        margin: 2.5rem 2rem;
-    }
-
-    .col-form-label-lg {
-        font-weight: 700;
-        text-align: left;
-    }
-
-    .btn-primary {
-        @include button-style();
-
-    }
-
-}
-
-#nearby-events {
-    width: 100%;
-    height: 100%;
-    margin-top: 15%;
-letter-spacing: 1px;
-
-    h1 {
-        @include h1-style();
-        font-size: 5rem;
-        letter-spacing: 3px;
-    }
-
-    .form-group {
-        padding: 1rem 15rem;
-        font-size: 2rem;
-        text-align: left;
-
-    }
-
-    .form-control {
-        background-color: #c3c3c3;
-        border: none;
-        border-radius: 0;
-    }
-
-    button {
-        @include button-style();
-        float: none;
-    }
-
-}
 
 #main-page {
 
     width: 100%;
     height: 100%;
-    margin-top: 20%;
+    margin-top: 10%;
 
 
     h1 {
@@ -176,6 +106,79 @@ letter-spacing: 1px;
 
 }
 
+#add-event {
+
+    h1 {
+        @include h1-style();
+        margin-bottom:2rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-control-lg {
+        background-color: #c3c3c3;
+        border: none;
+        border-radius: 0;
+    }
+
+    span {
+        color: $secondary_color;
+    }
+
+    .form-group {
+        margin: 1rem 2rem;
+    }
+
+    .col-form-label-lg {
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .btn-primary {
+        margin-top:2rem;
+        @include button-style();
+
+    }
+
+}
+
+#nearby-events {
+    width: 100%;
+    height: 100%;
+   margin-top:5%;
+letter-spacing: 1px;
+
+    h1 {
+        @include h1-style();
+        font-size: 5rem;
+        letter-spacing: 3px;
+        span{
+            color:#FFF;
+        }
+    }
+
+    .form-group {
+        padding: 1rem 15rem;
+        font-size: 2rem;
+        text-align: left;
+
+    }
+
+    .form-control {
+        background-color: #c3c3c3;
+        border: none;
+        border-radius: 0;
+    }
+
+    button {
+        @include button-style();
+        float: none;
+    }
+
+}
 .square1 {
     position: absolute;
     -webkit-transform: rotate(-33deg);
