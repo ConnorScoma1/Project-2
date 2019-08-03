@@ -126,6 +126,18 @@ $("#submitSearch").on("click", function(event) {
         console.log("There Are No Events For this Location");
       } else {
 
+        var newEvent = {
+          name: $('#event-name').val().trim(),
+          when: $('#event-date').val().trim(),
+          where: $('#event-location').val().trim(),
+          type: $('#event-type').val().trim()
+        }
+
+        $.post("/api", newEvent)
+          .then(function(res) {
+            console.log(res)
+          })
+
         $('#nearby-events').hide();
         $('#show-events').show();
         $('#map').show();
