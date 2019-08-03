@@ -151,6 +151,7 @@ html {
    margin-top:5%;
 letter-spacing: 1px;
 
+
     h1 {
         @include h1-style();
         font-size: 5rem;
@@ -164,6 +165,7 @@ letter-spacing: 1px;
         padding: 1rem 15rem;
         font-size: 2rem;
         text-align: left;
+       
 
     }
 
@@ -171,6 +173,7 @@ letter-spacing: 1px;
         background-color: #c3c3c3;
         border: none;
         border-radius: 0;
+        
     }
 
     button {
@@ -178,6 +181,10 @@ letter-spacing: 1px;
         float: none;
     }
 
+}
+
+.hidden{
+    visibility: hidden;
 }
 .square1 {
     position: absolute;

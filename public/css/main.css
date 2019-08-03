@@ -161,6 +161,10 @@ html {
   float: none;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .square1 {
   position: absolute;
   -webkit-transform: rotate(-33deg);

@@ -125,9 +125,15 @@ $("#submitSearch").on("click", function(event) {
       if (oData.events === null) {
         console.log("There Are No Events For this Location");
       } else {
-        for (var i = 0; i < oData.events.event.length; i++) {
+
+        $('#nearby-events').hide();
+        $('#show-events').show();
+        $('#map').show();
+
+        for (var i = 0; i < 5; i++) {
           var events = oData.events.event;
           console.log(events[i]);
+          makeEventBar();
         }
 
         function initMap() {
@@ -182,3 +188,21 @@ $("#submitSearch").on("click", function(event) {
 
   eventfulAPI();
 });
+
+function makeEventBar(){
+  var div = $('<div class="row event-bar">');
+  var heading = $('<div class="col-6 event-bar--header">');
+  var btn = $(' <a name="info" class="btn btn-primary" href="#" role="button">More Info</a>')
+  var time = $('<div class="col-2 event-bar--time">');
+  var img = $('<div class="col-4 event-bar--img">');
+
+  heading.append('<h5> It Works! </h5>');
+  heading.append(btn);
+  time.append('<p>12:00PM</p>');
+  img.append('<p>works</p>');
+
+  div.append(heading,time,img);
+
+  
+  $('#show-events').append(div);
+}
