@@ -1,0 +1,263 @@
+
+@media(max-width: 768px) {
+
+    #main-page {
+        h1 {
+            font-size: 4.5rem;
+        }
+
+        p {
+            font-size: 2rem;
+        }
+
+        .event-btns {
+            margin-top: 2rem;
+            padding: 0;
+
+            a {
+                font-size: 1rem;
+            }
+
+            padding:0;
+        }
+
+        .btn {
+            margin-top: 3rem;
+            padding: 0;
+
+        }
+
+    }
+
+    #add-event {
+
+        margin-top: 2rem;
+
+     
+
+        h1 {
+           
+            margin-bottom:1rem;
+            font-size: 2rem;
+        }
+    
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight:700;
+        }
+    
+        .form-control-lg {
+            background-color: #c3c3c3;
+            border: none;
+            border-radius: 0;
+        }
+    
+        span {
+            color: $secondary_color;
+            font-size:2rem;
+            font-weight:700;
+        }
+    
+        .form-group {
+            margin: 1rem .5rem;
+        }
+    
+        .col-form-label-lg {
+            font-weight: 700;
+            text-align: left;
+        }
+    
+        .btn-primary {
+        margin-bottom:2rem;
+            float:none;
+            margin-right:0;
+    
+        }
+    
+    }
+
+    #nearby-events {
+        width: 100%;
+        height: 100%;
+       margin-top:5%;
+    letter-spacing: 1px;
+    
+    
+        h1 {
+            font-size: 4rem;
+            letter-spacing: 3px;
+            span{
+                color:#FFF;
+            }
+        }
+    
+        .form-group {
+            padding: 1rem;
+            font-size: 2rem;
+            text-align: left;
+           
+    
+        }
+    
+        .form-control {
+            background-color: #c3c3c3;
+            border: none;
+            border-radius: 0;
+            
+        }
+    
+        button {
+            @include button-style();
+            float: none;
+        }
+    
+    }
+    
+    }
+    
+    #nearby-events {
+        width: 100%;
+        height: 100%;
+       margin-top:5%;
+    letter-spacing: 1px;
+    
+    
+        h1 {
+         
+            font-size: 4em;
+            letter-spacing: 3px;
+            span{
+                color:#FFF;
+            }
+        }
+    
+        .form-group {
+            width:100%;
+            padding: 0;
+            font-size: 2rem;
+            text-align: left;
+           
+    
+        }
+    
+        .form-control {
+            background-color: #c3c3c3;
+            border: none;
+            border-radius: 0;
+            
+        }
+    
+        button {
+      
+            float: none;
+        }
+    
+    }
+
+
+
+
+
+
+
+
+
+@media(max-width: 580px) {
+    #bg{
+        clip-path: polygon(100% 0, 0 0, 0 44%);
+    }
+    #bg-mo{
+        clip-path: polygon(100% 56%, 100% 100%, 0 104%);
+        visibility: visible;
+        background-color: $secondary_color;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        right:0;
+        z-index: -1;
+    }
+    #main-page {
+        margin-top: 12rem;
+        margin-bottom:0;
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.5rem;
+           
+        }
+        .event-btns {
+           // margin-top: 1rem;
+            padding: 0;
+
+            a {
+                font-size: 1rem;
+                padding:1rem;
+            }
+
+           
+        }
+
+        .btn {
+            margin-top: 3rem;
+            padding: 0;
+
+        }
+    }
+
+    #add-event {
+
+        margin-top: 2rem;
+
+     
+
+        h1 {
+           
+            margin-bottom:1rem;
+            font-size: 1rem;
+        }
+    
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight:700;
+        }
+    
+        .form-control-lg {
+            background-color: #c3c3c3;
+            border: none;
+            border-radius: 0;
+        }
+    
+        span {
+            color: $secondary_color;
+            font-size:2rem;
+            font-weight:700;
+        }
+    
+        .form-group {
+            margin: 1rem .5rem;
+        }
+    
+        .col-form-label-lg {
+            font-weight: 700;
+            text-align: left;
+        }
+    
+        .btn-primary {
+        margin-bottom:2rem;
+            float:none;
+            margin-right:0;
+    
+        }
+    
+    }
+    #nearby-events h1 span {
+        color: $primary-color;
+    }
+
+}
