@@ -98,7 +98,6 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
-
 // **************************************************'
 // Eventful API Call
 // **************************************************
@@ -106,7 +105,9 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 $("#submitSearch").on("click", function(event) {
   event.preventDefault();
 
-  var eventLocation = $("#location").val().trim()
+  var eventLocation = $("#location")
+    .val()
+    .trim();
 
   function eventfulAPI() {
     var oArgs = {
@@ -121,28 +122,15 @@ $("#submitSearch").on("click", function(event) {
 
     EVDB.API.call("/events/search", oArgs, function(oData) {
       if (oData.events == null) {
-        console.log("There Are No Events For this Location");
+        var noLocation = "there is no location";
+        $("#noLocation").append(noLocation);
       } else {
-
-        // var newEvent = {
-        //   name: $('#event-name').val().trim(),
-        //   when: $('#event-date').val().trim(),
-        //   where: $('#event-location').val().trim(),
-        //   type: $('#event-type').val().trim()
-        // }
-
-        // $.post("/api/all", newEvent)
-        //   .then(function(res) {
-        //     console.log(res)
-        //   })
-
         // $('#nearby-events').hide();
         // $('#show-events').show();
-       
 
         for (var i = 0; i < 5; i++) {
           var events = oData.events.event;
-          
+
           // makeEventBar();
         }
 
@@ -159,6 +147,9 @@ $("#submitSearch").on("click", function(event) {
             center: location
           });
 
+          var trafficLayer = new google.maps.TrafficLayer();
+          trafficLayer.setMap(map);
+
           for (var j = 0; j < oData.events.event.length; j++) {
             // Lat & Lng For Pins Locations
             var latitudeLoop = parseFloat(oData.events.event[j].latitude);
@@ -166,22 +157,23 @@ $("#submitSearch").on("click", function(event) {
 
             var locationLoop = { lat: latitudeLoop, lng: longitudeLoop };
 
+              console.log(oData.events.event[i])
             // setting markers for vender locations
             var marker = new google.maps.Marker({
               position: locationLoop,
               draggable: false,
               animation: google.maps.Animation.DROP,
               map: map,
-              title: oData.events.event[j].description
+              title: oData.events.event[j].description,
+              url: oData.events.event[i].url
             });
           }
 
           marker.addListener("click", toggleBounce);
 
-          marker.addListener('click', function() {
+          marker.addListener("click", function() {
             infowindow.open(map, marker);
           });
-
         }
         function toggleBounce() {
           if (marker.getAnimation() !== null) {
@@ -199,20 +191,29 @@ $("#submitSearch").on("click", function(event) {
   eventfulAPI();
 });
 
-function makeEventBar(){
-  var div = $('<div class="row event-bar">');
-  var heading = $('<div class="col-6 event-bar--header">');
-  var btn = $(' <a name="info" class="btn btn-primary" href="#" role="button">More Info</a>')
-  var time = $('<div class="col-2 event-bar--time">');
-  var img = $('<div class="col-4 event-bar--img">');
+// function makeEventBar() {
+//   var div = $('<div class="row event-bar">');
+//   var heading = $('<div class="col-6 event-bar--header">');
+//   var btn = $(
+//     ' <a name="info" class="btn btn-primary" href="#" role="button">More Info</a>'
+//   );
+//   var time = $('<div class="col-2 event-bar--time">');
+//   var img = $('<div class="col-4 event-bar--img">');
 
-  heading.append('<h5> It Works! </h5>');
-  heading.append(btn);
-  time.append('<p>12:00PM</p>');
-  img.append('<p>works</p>');
+//   heading.append("<h5> It Works! </h5>");
+//   heading.append(btn);
+//   time.append("<p>12:00PM</p>");
+//   img.append("<p>works</p>");
 
-  div.append(heading,time,img);
+//   div.append(heading, time, img);
 
-  
-  $('#show-events').append(div);
-}
+//   $("#show-events").append(div);
+//   var newEvent = {
+//     name: heading,
+//     when: time
+//   };
+
+//   $.post("/api/all", newEvent).then(function(res) {
+//     console.log(res);
+//   });
+// }
