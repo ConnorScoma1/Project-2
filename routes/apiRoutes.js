@@ -13,7 +13,7 @@ module.exports = function (app) {
     if (req.params.book) {
       db.Event.findAll({
         where: {
-          name: req.params.eventName
+          name: req.params.name
         }
       }).then(function (results) {
         res.json(results);
@@ -25,7 +25,7 @@ module.exports = function (app) {
   app.get("/api/:date", function (req, res) {
     db.Event.findAll({
       where: {
-        date: req.params.eventDate
+        date: req.params.date
       }
     }).then(function (results) {
       res.json(results);
@@ -36,7 +36,7 @@ module.exports = function (app) {
 
   //post routes//
   //add book
-  app.post("/api/add", function (req, res) {
+  app.post("/api/all", function (req, res) {
     console.log(req.body); 
     db.Event.create({
       name: req.body.name,
@@ -51,7 +51,7 @@ module.exports = function (app) {
   app.post("api/delete", function (req, res) {
     db.Event.destroy({
       where: {
-        id: req.body.id
+        id: req.body.name
       }
     });
   });
