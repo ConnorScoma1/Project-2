@@ -7,8 +7,9 @@ $.get("api/all", function (data) {
         $("#all-section").append(allSelection);
 
         $("#all-events-" + i).append("<h2>" + (i + 1) + ". " + data[i].name + "<h2>");
-        $("#all-events-" + i).append("<h3>" + (i + 1) + ". " + data[i].date + "<h2>");
-        $("#all-events-" + i).append("<h3>" + (i + 1) + ". " + data[i].location + "<h2>");
-        $("#all-events-" + i).append("<h3>" + (i + 1) + ". " + data[i].eventType + "<h2>");
+        $("#all-events-" + i).append("<h3>" + data[i].date + "<h3>");
+        $("#all-events-" + i).append("<h3>" + data[i].location + "<h3>");
+        $("#all-events-" + i).append("<h3>" + data[i].eventType + "<h2>");
+        $("#all-events-" + i).append("<h3>" + data[i].eventDescription + "<h2>");
     }
 });

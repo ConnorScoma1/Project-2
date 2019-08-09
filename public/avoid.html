@@ -8,20 +8,27 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Nearby Events</title>
+    <title>Avoid Events</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css.map">
+    <link rel="stylesheet" href="css/main.scss">
   </head>
   <body>
-    <div class="h1">AVOID EVENTS</div>
-    <div class="h3">WHATS APPPP</div>
-    <a class="btn btn-primary btn-lg" href="/add"  id="add-event">ADD EVENT</button>
-      <br>
-    <a class="btn btn-primary btn-lg" href="/find" id="search-events" >NEARBY EVENTS</button>
-      <a class="btn btn-primary btn-lg" href="/avoid"  id="add-event">AVOID EVENT</button>
-        <br>
-      <a class="btn btn-primary btn-lg" href="/delete" id="search-events" >DELETE EVENTS</button>
-
-</div>
-<div></div>
+      <div class="pageContent">
+          <div class="jumbotron">
+          <h1>Find Yo Shit!</h1>
+            <div class="h3">WHATS APPPP</div>
+            <hr>
+              <a class="btn btn-primary btn-lg" href="/add" id="add-event">ADD EVENT
+                <br>
+              <a class="btn btn-primary btn-lg" href="/find" id="find-events" >NEARBY EVENTS
+                <a class="btn btn-primary btn-lg" href="/avoid"  id="avoid-events">AVOID EVENT
+                  <br>
+                <a class="btn btn-primary btn-lg" href="/delete" id="delete-events" >DELETE EVENTS
+                  <br>
+                  <a class="btn btn-primary btn-lg" href="/all" id="all-events" >ALL EVENTS</a>
+          
+        </div>
     <form>
             <div class="form-group">
               <label for="formGroupExampleInput">WHERE ARE YOU AT?</label>
@@ -32,6 +39,7 @@
               <input type="text" class="form-control" id="date-input" placeholder="">
             </div>
           </form>
+        </div>
 
 
     <!-- Optional JavaScript -->

@@ -1,35 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-loaded
-    <div id="all-section"></div>
-    <div id="all-events"></div>
-    
-</body>
-</html>
+
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/main.css">
+
+    <title>Find Yo Shit</title>
+  </head>
+  <body>
+
+    <div id="bg"></div>
+
+    <div id="main-page" class=" align-middle text-center">
+        <h1>Find Yo SHit</h1>
+        <h2>ALL EVENTS</h2>
+      <!-- <div class="row">
+        <div class="col-12 text-center">
+        <h1>Find Yo SHit</h1>
+        <p>What's Apppppppp?</p>
+       </div>
+       <div class="row event-btns">
+         <div class="col-6 event-btn">
+             <a name="add" id="add-event" class="btn" href="/add" role="button">ADD EVENT</a>
+         </div>
+         <div class="col-6 event-btn">
+            
+        <a name="find" id="find-event" class="btn" href="/find" role="button"> EVENT</a>
+         </div>
+         <a name ="delete" id="delte-event" class="btn" href="/delete" role="button">DELETE</a>
+       </div> -->
+       <div class="panel-default">
+          <div class="card-body">
+              <div id="all-section">
+              <div id="all-events"></div>
+              </div>
+          </div>
+        </div>
+    </div>
+  
     <!-- Optional JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"
-    ></script>
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script
+      type="text/javascript"
+      src="http://api.eventful.com/js/api"></script>
+
+    <script src="js/index.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="all.js"></script>
     <script src="/public/js/add.js"></script>
     <script src="/public/js/index.js"></script>
     <!-- <script src="js/apiRoutes.js"></script>
     <script src="js/htmlRoutes.js"></script> -->
-
-
-    
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>
-</html>
+</html> 

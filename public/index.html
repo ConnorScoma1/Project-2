@@ -15,31 +15,47 @@
       crossorigin="anonymous"
     />
 
+    <link rel="stylesheet" href="./css/main.css">
+
     <title>Find Yo Shit</title>
   </head>
   <body>
-    <div class="pageContent">
-      <h1>Find Yo Shit!</h1>
-        <div class="h3">WHATS APPPP</div>
-          <a href ="/add" class="btn btn-primary btn-lg" id="add-event">ADD EVENT</button>
-            <br>
-          <a class="btn btn-primary btn-lg" href="/find" id="find-events" >NEARBY EVENTS</button>
-            <a class="btn btn-primary btn-lg" href="/avoid"  id="avoid-events">AVOID EVENT</button>
-              <br>
-            <a class="btn btn-primary btn-lg" href="/delete" id="delete-events" >DELETE EVENTS</button>
-              <br>
-              <a class="btn btn-primary btn-lg" href="/all" id="all-events" >ALL EVENTS</button>
-      
+
+    <div id="bg"></div>
+
+    <div id="main-page" class=" align-middle text-center">
+      <div class="row">
+        <div class="col-12 text-center">
+        <h1>Find Yo SHit</h1>
+        <p>What's Apppppppp?</p>
+       </div>
+       <div class="row event-btns">
+         <div class="col-6 event-btn">
+             <a name="add" id="add-event" class="btn" href="/add" role="button">ADD EVENT</a>
+         </div>
+         <div class="col-6 event-btn">
+            
+        <a name="find" id="find-event" class="btn" href="/find" role="button">FIND EVENT</a>
+         </div>
+         <a name="all" id="all-event" class="btn" href="/all" role="button">FIND EVENT</a>
+        </div>
+        <a name="delete" id="delete-event" class="btn" href="/avoid" role="button">FIND EVENT</a>
+      </div>
+       </div>
+   
+      </div>
     </div>
+   
+
+
+
+
 
     <!-- Optional JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -59,13 +75,9 @@
 
     <script
       type="text/javascript"
-      src="http://api.eventful.com/js/api"></script>
-      <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBGl1Hl1va0P36762GiXk4FWTYm8owr-E
-      &callback=initMap"></script>
+      src="http://api.eventful.com/js/api"
+    ></script>
+
     <script src="js/index.js"></script>
   </body>
 </html>
-
