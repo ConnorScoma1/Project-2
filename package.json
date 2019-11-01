@@ -21,7 +21,7 @@
     "mysql2": "^1.6.5",
     "node-geocoder": "^3.22.0",
     "now": "^15.8.7",
-    "sequelize": "^5.11.0"
+    "sequelize": "^5.15.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
